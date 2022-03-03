@@ -1,0 +1,197 @@
+###############################################################################
+#
+# IAR ELF Linker V9.20.4.327/W64 for ARM                  03/Mar/2022  14:15:49
+# Copyright 2007-2022 IAR Systems AB.
+#
+#    Output file  =
+#        D:\dr\_Embarcados\ELF74\dr_Tiva_Template\Lab2\ewarm\Exe\Lab2.out
+#    Map file     =
+#        D:\dr\_Embarcados\ELF74\dr_Tiva_Template\Lab2\ewarm\List\Lab2.map
+#    Command line =
+#        -f
+#        D:\dr\_Embarcados\ELF74\dr_Tiva_Template\Lab2\ewarm\Exe\Lab2.out.rsp
+#        (D:\dr\_Embarcados\ELF74\dr_Tiva_Template\Lab2\ewarm\Obj\Source\blinky.o
+#        D:\dr\_Embarcados\ELF74\TivaWare_C_Series-2.2.0.295\driverlib\ewarm\Exe\driverlib.a
+#        D:\dr\_Embarcados\ELF74\dr_Tiva_Template\Lab2\ewarm\Obj\Source\startup_ewarm.o
+#        --no_out_extension -o
+#        D:\dr\_Embarcados\ELF74\dr_Tiva_Template\Lab2\ewarm\Exe\Lab2.out --map
+#        D:\dr\_Embarcados\ELF74\dr_Tiva_Template\Lab2\ewarm\List\Lab2.map
+#        --config D:\dr\_Embarcados\ELF74\dr_Tiva_Template\Lab2\Tiva.icf
+#        --semihosting --entry __iar_program_start --vfe --text_out locale)
+#
+###############################################################################
+
+*******************************************************************************
+*** RUNTIME MODEL ATTRIBUTES
+***
+
+CppFlavor       = *
+__CPP_Runtime   = 1
+__SystemLibrary = DLib
+__dlib_version  = 6
+
+
+*******************************************************************************
+*** HEAP SELECTION
+***
+
+The basic heap was selected because some modules are built with
+size limitations (and not runtime checking), and --advanced_heap
+was not specified.
+
+
+*******************************************************************************
+*** PLACEMENT SUMMARY
+***
+
+"A0":  place at start of [from 0x0 to 0xf'ffff] { ro section .intvec };
+"P1":  place in [from 0x0 to 0xf'ffff] { ro };
+define block CSTACK with size = 32K, alignment = 8 { };
+define block HEAP with size = 64K, alignment = 8 { };
+"P2":  place in [from 0x2000'0000 to 0x2003'ffff] {
+          rw, block CSTACK, block HEAP };
+do not initialize { section .noinit };
+
+No sections matched the following patterns:
+
+  section VTABLE  in "A1"
+
+
+  Section  Kind         Address   Size  Object
+  -------  ----         -------   ----  ------
+"A0":                            0x200
+  .intvec  const            0x0  0x200  startup_ewarm.o [1]
+                        - 0x200  0x200
+
+"P1":                            0x7e2
+  .text    ro code        0x200  0x2b4  sysctl.o [3]
+  .text    ro code        0x4b4  0x1e0  gpio.o [3]
+  .rodata  const          0x694  0x1b0  sysctl.o [3]
+  .rodata  const          0x844   0x6c  sysctl.o [3]
+  .text    ro code        0x8b0   0x60  blinky.o [1]
+  .rodata  const          0x910   0x30  sysctl.o [3]
+  .text    ro code        0x940   0x22  fpinit_M.o [4]
+  .text    ro code        0x964   0x1e  cmain.o [5]
+  .text    ro code        0x982    0x4  low_level_init.o [2]
+  .text    ro code        0x986    0x4  exit.o [2]
+  .text    ro code        0x98c    0xa  cexit.o [5]
+  .text    ro code        0x998   0x14  exit.o [6]
+  .text    ro code        0x9ac   0x1c  cstartup_M.o [5]
+  .text    ro code        0x9c8   0x1a  startup_ewarm.o [1]
+                        - 0x9e2  0x7e2
+
+"P2":                            0x100
+  .noinit  uninit   0x2000'0000  0x100  startup_ewarm.o [1]
+                  - 0x2000'0100  0x100
+
+Unused ranges:
+
+         From           To      Size
+         ----           --      ----
+        0x9e2     0xf'ffff  0xf'f61e
+  0x2000'0100  0x2003'ffff  0x3'ff00
+
+
+
+*******************************************************************************
+*** MODULE SUMMARY
+***
+
+    Module            ro code  ro data  rw data
+    ------            -------  -------  -------
+command line/config:
+    -------------------------------------------
+    Total:
+
+D:\dr\_Embarcados\ELF74\dr_Tiva_Template\Lab2\ewarm\Obj\Source: [1]
+    blinky.o               96
+    startup_ewarm.o        26      512      256
+    -------------------------------------------
+    Total:                122      512      256
+
+dl7M_tln.a: [2]
+    exit.o                  4
+    low_level_init.o        4
+    -------------------------------------------
+    Total:                  8
+
+driverlib.a: [3]
+    gpio.o                480
+    sysctl.o              692      588
+    -------------------------------------------
+    Total:              1'172      588
+
+m7M_tls.a: [4]
+    fpinit_M.o             34
+    -------------------------------------------
+    Total:                 34
+
+rt7M_tl.a: [5]
+    cexit.o                10
+    cmain.o                30
+    cstartup_M.o           28
+    -------------------------------------------
+    Total:                 68
+
+shb_l.a: [6]
+    exit.o                 20
+    -------------------------------------------
+    Total:                 20
+
+    Gaps                    6
+-----------------------------------------------
+    Grand Total:        1'430    1'100      256
+
+
+*******************************************************************************
+*** ENTRY LIST
+***
+
+Entry                       Address   Size  Type      Object
+-----                       -------   ----  ----      ------
+?main                         0x965         Code  Gb  cmain.o [5]
+FaultISR                      0x9df    0x2  Code  Lc  startup_ewarm.o [1]
+GPIODirModeSet                0x4b5   0x28  Code  Gb  gpio.o [3]
+GPIOPadConfigSet              0x4dd  0x186  Code  Gb  gpio.o [3]
+GPIOPinTypeGPIOOutput         0x66b    0xa  Code  Gb  gpio.o [3]
+GPIOPinWrite                  0x663    0x8  Code  Gb  gpio.o [3]
+IntDefaultHandler             0x9e1    0x2  Code  Lc  startup_ewarm.o [1]
+NmiSR                         0x9dd    0x2  Code  Lc  startup_ewarm.o [1]
+Region$$Table$$Base             0x0          --   Gb  - Linker created -
+Region$$Table$$Limit            0x0          --   Gb  - Linker created -
+ResetISR                      0x9c9    0xe  Code  Gb  startup_ewarm.o [1]
+SysCtlClockFreqSet            0x26d  0x206  Code  Gb  sysctl.o [3]
+SysCtlDelay                   0x265    0x8  Code  Gb  sysctl.o [3]
+SysCtlPeripheralEnable        0x245    0x8  Code  Gb  sysctl.o [3]
+SysCtlPeripheralReady         0x223    0x8  Code  Gb  sysctl.o [3]
+_SysCtlMemTimingGet           0x201   0x22  Code  Lc  sysctl.o [3]
+__cmain                       0x965         Code  Gb  cmain.o [5]
+__exit                        0x999   0x14  Code  Gb  exit.o [6]
+__iar_init_vfp                0x941         Code  Gb  fpinit_M.o [4]
+__iar_program_start           0x9ad         Code  Gb  cstartup_M.o [5]
+__low_level_init              0x983    0x4  Code  Gb  low_level_init.o [2]
+__vector_table                  0x0  0x200  Data  Gb  startup_ewarm.o [1]
+_call_main                    0x971         Code  Gb  cmain.o [5]
+_exit                         0x98d         Code  Gb  cexit.o [5]
+exit                          0x987    0x4  Code  Gb  exit.o [2]
+g_pppui32XTALtoVCO            0x694  0x1b0  Data  Lc  sysctl.o [3]
+g_pui32VCOFrequencies         0x4ac    0x8  Data  Lc  sysctl.o [3]
+g_pui32Xtals                  0x844   0x6c  Data  Lc  sysctl.o [3]
+g_sXTALtoMEMTIM               0x910   0x30  Data  Lc  sysctl.o [3]
+main                          0x8b1   0x60  Code  Gb  blinky.o [1]
+pui32Stack              0x2000'0000  0x100  Data  Lc  startup_ewarm.o [1]
+
+
+[1] = D:\dr\_Embarcados\ELF74\dr_Tiva_Template\Lab2\ewarm\Obj\Source
+[2] = dl7M_tln.a
+[3] = driverlib.a
+[4] = m7M_tls.a
+[5] = rt7M_tl.a
+[6] = shb_l.a
+
+  1'430 bytes of readonly  code memory
+  1'100 bytes of readonly  data memory
+    256 bytes of readwrite data memory
+
+Errors: none
+Warnings: none
