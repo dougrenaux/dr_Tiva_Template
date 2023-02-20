@@ -1,5 +1,5 @@
 /*__________________________________________________________________________________
-|       Disciplina de Sistemas Embarcados - 2022-1
+|       Disciplina de Sistemas Embarcados - 2023-1
 |       Prof. Douglas Renaux
 | __________________________________________________________________________________
 |
@@ -15,8 +15,8 @@
  *           Show messages on terminal using std::cout. \n 
  *           Show current value of some predefined macros (preprocessor symbols).\n 
  *           Read float value from terminal using std::cin.
- * @version  V2 -for 2022-1 semester
- * @date     Feb, 2022
+ * @version  
+ * @date     
  ******************************************************************************/
 
 /*------------------------------------------------------------------------------

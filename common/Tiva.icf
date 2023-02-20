@@ -90,3 +90,10 @@ place in FLASH { readonly };
 // Place all read/write items into SRAM.
 //
 place in SRAM {block RAM_bl};
+
+//******************************************************************
+// 6-Multithreaded support
+//******************************************************************
+// see ThreadX/ports/cortex-M4/iar/readme_threads
+
+initialize by copy with packing = none { section __DLIB_PERTHREAD };
