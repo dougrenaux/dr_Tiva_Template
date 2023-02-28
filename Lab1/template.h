@@ -9,10 +9,10 @@
 
 /**
  * @file     template.h
- * @author   Douglas P. B. Renaux
+ * @author   insert authors names here
  * @brief    This header file...
- * @version  V2 -for 2022-1 semester
- * @date     Feb, 2022
+ * @version  V2 -for 2023-1 semester
+ * @date     Feb, 2023
  ******************************************************************************/
 
 #ifndef _MODULE_NAME_

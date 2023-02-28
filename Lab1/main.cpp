@@ -8,8 +8,8 @@
 */
 
 /**
- * @file     main.cpp
- * @author   Douglas P. B. Renaux
+ * @file     insert filename here
+ * @author   insert authors names here
  * @brief    Solution to Lab1 of ELF74/CSW41 - UTFPR. \n 
  *           Tools instalation and validation procedure.\n 
  *           Show messages on terminal using std::cout. \n 
