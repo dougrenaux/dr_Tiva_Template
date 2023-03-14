@@ -31,8 +31,13 @@
 *.out
 *.app
 
+# IAR folders to be ignored
 Doxygen
 ewarm
 Debug
 settings
+TraceX
+
+# IAR files to be ignored
 *.dep
+Backup*
